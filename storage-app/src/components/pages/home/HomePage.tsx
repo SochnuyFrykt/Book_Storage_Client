@@ -168,7 +168,7 @@ const HomePage = () => {
       <div style={{ display:"flex", }}>
         <AddBookButton />
         {books.map(book => (
-          <div style={{border: "2px solid grey", padding: "10px" }} key={book.id}>
+          <div key={book.id}>
             <BookCard image={""} 
                       name={book.name} 
                       author={book.author} 

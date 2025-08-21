@@ -1,0 +1,6 @@
+.card_container {
+    width: 12vw;
+    height: 15vw;
+    padding: 10px;
+    border: 2px solid darkgrey;
+}
