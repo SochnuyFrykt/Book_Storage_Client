@@ -1,7 +1,9 @@
+import HomePage from "./components/pages/home/HomePage.tsx";
+
 function App() {
   return (
     <>
-      <div>Привет</div>
+      <HomePage/>
     </>
   )
 }
