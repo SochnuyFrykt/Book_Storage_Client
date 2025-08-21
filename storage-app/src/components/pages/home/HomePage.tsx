@@ -1,6 +1,7 @@
 import {useEffect, useState, useCallback, type FormEvent} from "react";
 import type {IBook} from "../../../types/book.ts";
 import BookCard from "../../books_components/BookCard.tsx";
+import AddBookButton from "../../books_components/add_book/AddBookButton.tsx";
 
 const initialNewBookState: Omit<IBook, 'id'> = {
   name: "",
@@ -164,7 +165,8 @@ const HomePage = () => {
       </form>
 
       <h1>Книги</h1>
-      <ul>
+      <div style={{ display:"flex", }}>
+        <AddBookButton />
         {books.map(book => (
           <div style={{border: "2px solid grey", padding: "10px" }} key={book.id}>
             <BookCard image={""} 
@@ -173,7 +175,7 @@ const HomePage = () => {
                       yearPublication={book.yearPublication}/>
           </div>
         ))}
-      </ul>
+      </div>
     </>
   )
 }
