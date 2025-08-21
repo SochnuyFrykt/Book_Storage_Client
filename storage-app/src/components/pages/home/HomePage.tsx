@@ -1,5 +1,6 @@
 import {useEffect, useState, useCallback, type FormEvent} from "react";
 import type {IBook} from "../../../types/book.ts";
+import BookCard from "../../books_components/BookCard.tsx";
 
 const initialNewBookState: Omit<IBook, 'id'> = {
   name: "",
@@ -13,7 +14,30 @@ const initialNewBookState: Omit<IBook, 'id'> = {
 };
 
 const HomePage = () => {
-  const [books, setBooks] = useState<IBook[]>([]);
+  const [books, setBooks] = useState<IBook[]>([
+    {
+      id: "D1AF7691-C57B-40CA-9536-F4235A7D904A",
+      name: "Сколько волка не корми",
+      bbk: "1",
+      author: "Карина Володова",
+      ydk: "",
+      isbn: "",
+      yearPublication: 2025,
+      description: "",
+      bookShelfId: null,
+    },
+    {
+      id: "D1AF7691-C57B-40CA-9536-F4235A7D904A",
+      name: "Сколько волка не корми",
+      bbk: "1",
+      author: "Карина Володова",
+      ydk: "",
+      isbn: "",
+      yearPublication: 2025,
+      description: "",
+      bookShelfId: null,
+    }
+  ]);
   const [error, setError] = useState(null);
   const [newBook, setNewBook] = useState(initialNewBookState);
 
@@ -56,7 +80,7 @@ const HomePage = () => {
       /// setFormError("Название книги и имя автора не могут быть пустыми.");
       return;
     }
-    
+
     try {
       const response = await fetch("http://localhost:5192/api/Book", {
         method: "POST",
@@ -84,9 +108,9 @@ const HomePage = () => {
     }
   };
 
-  if (error) {
-    return <div>Ошибка: {error}</div>
-  }
+  // if (error) {
+  //   return <div>Ошибка: {error}</div>
+  // }
 
   return (
     <>
@@ -139,13 +163,15 @@ const HomePage = () => {
         </button>
       </form>
 
-      <h1>Список книг</h1>
+      <h1>Книги</h1>
       <ul>
         {books.map(book => (
-          <li key={book.id}>
-            <h2>{book.name}</h2>
-            <p>Автор: {book.author}</p>
-          </li>
+          <div style={{border: "2px solid grey", padding: "10px" }} key={book.id}>
+            <BookCard image={""} 
+                      name={book.name} 
+                      author={book.author} 
+                      yearPublication={book.yearPublication}/>
+          </div>
         ))}
       </ul>
     </>
