@@ -1,10 +1,10 @@
-import HomePage from "./components/pages/home/HomePage.tsx";
 import {Outlet} from "react-router-dom";
+import Navbar from "./components/layout/Navbar.tsx";
 
 function App() {
   return (
     <>
-      <HomePage/>
+      <Navbar/>
       <main style={{backgroundColor:"black"}}>
         <Outlet /> 
       </main>
