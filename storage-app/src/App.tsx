@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <Navbar/>
-      <main style={{backgroundColor:"black"}}>
+      <main>
         <Outlet /> 
       </main>
     </>
