@@ -1,3 +1,5 @@
+import style from './BookCardStyle.module.css';
+
 interface IBookProps {
   image: string;
   name: string;
@@ -7,7 +9,7 @@ interface IBookProps {
 
 const BookCard = (props: IBookProps) => {
   return (
-    <div>
+    <div className={style.card_container}>
       <div className="cover">
         {/*todo: Добавить изображение обложки книги*/}
         Изображение
