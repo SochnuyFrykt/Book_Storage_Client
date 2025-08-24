@@ -1,5 +1,6 @@
 .nav_container {
     height: 8vh;
+    margin-bottom: 2rem;
     padding: 0 3rem;
     display: flex;
     align-items: center;

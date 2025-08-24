@@ -51,9 +51,6 @@ const HomePage = () => {
 
   return (
     <>
-      <div>Домашняя страница</div>
-
-      <h1>Книги</h1>
       <div style={{ display:"flex", }}>
         <AddBookButton />
         {books.map(book => (
